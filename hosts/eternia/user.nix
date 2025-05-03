@@ -7,6 +7,7 @@
         firefox.enable = true;
         steam.enable = true;
         discord.enable = true;
+        obsidian.enable = true;
 
         # cli
         nvim.enable = true;

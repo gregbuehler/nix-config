@@ -8,6 +8,7 @@
         ./firefox
         ./git
         ./nvim
+        ./obsidian
         ./steam
 
         # system

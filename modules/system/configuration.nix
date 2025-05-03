@@ -82,6 +82,8 @@
     neovim
     alacritty
     btop
+    podman
+    docker-compose
   ];
 
 
