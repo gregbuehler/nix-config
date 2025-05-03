@@ -10,6 +10,7 @@
         ./nvim
         ./obsidian
         ./steam
+        ./vscode
 
         # system
         ./packages

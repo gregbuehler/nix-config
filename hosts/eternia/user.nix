@@ -10,6 +10,7 @@
         steam.enable = true;
         discord.enable = true;
         obsidian.enable = true;
+        vscode.enable = true;
 
         # cli
         nvim.enable = true;
