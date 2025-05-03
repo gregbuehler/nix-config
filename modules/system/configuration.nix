@@ -96,6 +96,9 @@
     btop
     podman
     docker-compose
+
+    # fixes icons
+    gnomeExtensions.appindicator
   ];
 
 
