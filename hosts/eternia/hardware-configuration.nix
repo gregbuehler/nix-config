@@ -2,7 +2,9 @@
 
 {
   imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
+    [ 
+      (./. + "/nvidia.nix")
+      (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
   boot = {

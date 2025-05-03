@@ -3,7 +3,6 @@
 {
     imports = [ 
         ../../modules/default.nix 
-        ./nvidia.nix
     ];
     config.modules = {
         # gui
