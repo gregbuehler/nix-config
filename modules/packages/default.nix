@@ -7,16 +7,15 @@ in {
     options.modules.packages = { enable = mkEnableOption "packages"; };
     config = mkIf cfg.enable {
     	home.packages = with pkgs; [
-            #ripgrep 
-            #ffmpeg 
+            bat
+            ffmpeg 
             htop 
-            #bat
-            #unzip 
-            #git 
-            #python3 
-            #zig 
-            #firefox
-            #screen 
+            python3 
+            ripgrep 
+            screen 
+            spotify
+            unzip 
+            zig 
         ];
     };
 }

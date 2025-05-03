@@ -1,7 +1,10 @@
 { config, lib, inputs, ...}:
 
 {
-    imports = [ ../../modules/default.nix ];
+    imports = [ 
+        ../../modules/default.nix 
+        ./nvidia.nix
+    ];
     config.modules = {
         # gui
         firefox.enable = true;

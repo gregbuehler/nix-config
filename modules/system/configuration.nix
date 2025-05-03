@@ -31,14 +31,26 @@
   };
 
   # setup xserver
-  services.xserver.enable = true;
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.displayManager.autoLogin.enable = true;
-  services.xserver.displayManager.autoLogin.user = "gregb";
-  services.xserver.desktopManager.gnome.enable = true;
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
+  services.xserver = {
+    enable = true;
+    displayManager.gdm = {
+        enable = true;
+        wayland = true;
+    };
+
+    desktopManager.gnome = {
+        enable = true;
+    };
+
+    displayManager.autoLogin = {
+        enable = true;
+        user = "gregb";
+    };
+
+    xkb = {
+        layout = "us";
+        variant = "";
+    };
   };
 
   # enable printing
