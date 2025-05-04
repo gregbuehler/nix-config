@@ -17,6 +17,7 @@ in {
             unzip 
             zig 
             godot
+            unityhub
         ];
     };
 }
