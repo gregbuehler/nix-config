@@ -16,6 +16,7 @@ in {
             spotify
             unzip 
             zig 
+            godot
         ];
     };
 }
