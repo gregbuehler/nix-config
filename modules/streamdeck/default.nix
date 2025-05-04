@@ -8,6 +8,11 @@ let cfg = config.modules.PROGRAM;
 in {
     options.modules.PROGRAM = { enable = mkEnableOption "PROGRAM"; };
     config = mkIf cfg.enable {
+
+      home.packages = with pkgs; [
+          steam
+      ];
+
       programs.streamdeck-ui = {
         enable = true;
         autoStart = true; # optional
