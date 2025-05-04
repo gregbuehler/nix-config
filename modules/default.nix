@@ -12,6 +12,7 @@
         ./wezterm
         ./steam
         ./vscode
+        ./streamdeck
 
         # system
         ./packages

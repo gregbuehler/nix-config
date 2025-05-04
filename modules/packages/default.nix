@@ -18,6 +18,7 @@ in {
             zig 
             godot
             unityhub
+            slack
         ];
     };
 }
