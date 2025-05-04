@@ -11,6 +11,7 @@
         discord.enable = true;
         obsidian.enable = true;
         vscode.enable = true;
+        wezterm.enable = true;
 
         # cli
         nvim.enable = true;

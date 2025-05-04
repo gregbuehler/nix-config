@@ -9,6 +9,7 @@
         ./git
         ./nvim
         ./obsidian
+        ./wezterm
         ./steam
         ./vscode
 
