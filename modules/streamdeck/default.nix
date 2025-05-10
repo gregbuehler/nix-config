@@ -10,12 +10,14 @@ in {
     config = mkIf cfg.enable {
 
       home.packages = with pkgs; [
-          steam
+        streamdeck-ui
       ];
 
-      programs.streamdeck-ui = {
-        enable = true;
-        autoStart = true; # optional
-      };
+      ## TODO: get this working later
+
+      # programs.streamdeck-ui = {
+      #   enable = true;
+      #   autoStart = true; # optional
+      # };
     };
 }

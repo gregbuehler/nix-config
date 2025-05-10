@@ -19,6 +19,7 @@ in {
             godot
             unityhub
             slack
+            kind
         ];
     };
 }
