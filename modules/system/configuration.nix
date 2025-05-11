@@ -73,7 +73,7 @@
   users.users.gregb = {
     isNormalUser = true;
     description = "Greg Buehler";
-    extraGroups = [ "networkmanager" "wheel" "input"];
+    extraGroups = [ "networkmanager" "wheel" "input" "podman"];
     packages = with pkgs; [
     #  thunderbird
     ];
@@ -87,6 +87,20 @@
   nixpkgs.config.allowUnfree = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+  # podman
+  virtualisation = {
+    containers.enable = true;
+    podman = {
+      enable = true;
+
+      # create docker aliases so it's a drop in replacement
+      dockerCompat = true;
+
+      # allow containers to resolve eachother
+      defaultNetwork.settings.dns_enabled = true;
+    };
+  };
+
   programs.firefox.enable = true;
   environment.systemPackages = with pkgs; [
     vim
@@ -95,7 +109,7 @@
     alacritty
     btop
     podman
-    docker-compose
+    podman-compose
 
     # fixes icons
     gnomeExtensions.appindicator

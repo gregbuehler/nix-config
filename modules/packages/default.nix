@@ -20,6 +20,7 @@ in {
             unityhub
             slack
             kind
+            go
         ];
     };
 }
