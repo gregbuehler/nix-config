@@ -110,6 +110,7 @@
     btop
     podman
     podman-compose
+    kubectl
 
     # fixes icons
     gnomeExtensions.appindicator
