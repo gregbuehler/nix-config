@@ -73,7 +73,7 @@
   users.users.gregb = {
     isNormalUser = true;
     description = "Greg Buehler";
-    extraGroups = [ "networkmanager" "wheel" "input" "podman"];
+    extraGroups = [ "networkmanager" "wheel" "input" "podman" "docker"];
     packages = with pkgs; [
     #  thunderbird
     ];
@@ -90,18 +90,38 @@
   # podman
   virtualisation = {
     containers.enable = true;
-    podman = {
+
+    ## podman has issues with kind and delegation, regress to docker for now
+    # podman = {
+    #   enable = true;
+
+    #   # create docker aliases so it's a drop in replacement
+    #   dockerCompat = true;
+
+    #   # allow containers to resolve eachother
+    #   defaultNetwork.settings.dns_enabled = true;
+    # };
+
+    docker = {
       enable = true;
-
-      # create docker aliases so it's a drop in replacement
-      dockerCompat = true;
-
-      # allow containers to resolve eachother
-      defaultNetwork.settings.dns_enabled = true;
+      storageDriver = "overlay2";
+      rootless = {
+        enable = false;
+        setSocketVariable = true;
+      };
     };
   };
 
+  programs.streamdeck-ui.enable = true;
   programs.firefox.enable = true;
+  
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+    localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
+  };
+
   environment.systemPackages = with pkgs; [
     vim
     wget
@@ -111,6 +131,11 @@
     podman
     podman-compose
     kubectl
+    cloudflared
+    google-chrome
+    vlc
+    nodejs
+    kicad
 
     # fixes icons
     gnomeExtensions.appindicator
