@@ -135,7 +135,12 @@
     google-chrome
     vlc
     nodejs
-    kicad
+    gimp3
+    #kicad
+    lmms
+    yt-dlp
+    gdb
+    strace
 
     # fixes icons
     gnomeExtensions.appindicator
